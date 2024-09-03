@@ -1,63 +1,65 @@
-body {
-       font-family: Arial, sans-serif;
-       background-color: #f4f4f4;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       height: 100vh;
-       margin: 0;
-   }
+body{
+   margin: 0;
+   font-family: 'Poppins', sans-serif;
+   background-color:#f5e8ba;
+}
 
-   .container {
-       background: white;
-       padding: 20px;
-       border-radius: 10px;
-       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-       width: 300px;
-   }
+#wrapper h2{
+    display:flex;
+    justify-content: center;
+    
+}
 
-   h1 {
-       text-align: center;
-       margin-bottom: 20px;
-   }
+h2{
+    color:#ffeba7;
+    letter-spacing: 1px;
+}
+input{
+    border-radius: 5px;
+    border: 2px solid black ;
+    margin-top:30px;
+    height:2.5em;
+    width:250px;
+    padding-left:10px;
+}
 
-   form {
-       display: flex;
-   }
+input:active{
+    border:none;
+}
+#wrapper{
+    height:500px;
+    width:400px;
+    margin:200px auto;
+    background-color:#1f2029;
+    border-radius:10px;
+    padding:30px;
+}
 
-   input[type="text"] {
-       flex: 1;
-       padding: 10px;
-       border: 1px solid #ddd;
-       border-radius: 5px;
-       margin-right: 10px;
-   }
+button{
+    margin-top:20px;
+    background-color:#ffeba7;
+    border-radius: 4px;
+    height: 44px;
+    font-weight: 600;
+    padding: 0 30px;
+    letter-spacing: 1px;
+    border: none;
+    color: #102770;
+}
 
-   button {
-       padding: 10px;
-       background-color: #28a745;
-       color: white;
-       border: none;
-       border-radius: 5px;
-       cursor: pointer;
-   }
+button:hover{
+    cursor:pointer;
+}
+#todoList{
+    color:white;
+    font-size:28px;  
+    margin-top:10px; 
+}
 
-   ul {
-       list-style-type: none;
-       padding: 0;
-   }
+#todoList p{
+  margin:10px 0px;
+}
 
-   li {
-       background: #f9f9f9;
-       padding: 10px;
-       border: 1px solid #ddd;
-       border-radius: 5px;
-       margin-bottom: 10px;
-       display: flex;
-       justify-content: space-between;
-   }
-
-   .completed {
-       text-decoration: line-through;
-       color: #888;
-   }
+#todoList p:hover{
+  cursor: pointer;
+}
