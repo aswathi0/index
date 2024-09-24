@@ -1,1 +1,28 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Blogging with Followers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Micro Blogging</h1>
+        <div class="login-section" id="loginSection">
+            <input type="text" id="username" placeholder="Enter your username" />
+            <button id="loginBtn">Login</button>
+        </div>
+        <div class="post-section" id="postSection" style="display:none;">
+            <textarea id="postInput" placeholder="What's on your mind?"></textarea>
+            <input type="file" id="imageInput" accept="image/*">
+            <button id="postBtn">Post</button>
+        </div>
+        <div class="feed-section">
+            <h2>Feed</h2>
+            <div id="feed"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
