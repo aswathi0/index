@@ -128,9 +128,7 @@ function displayPost(post, feed) {
         if (commentInput.value.trim()) {
             const commentText = `${currentUsername}: ${commentInput.value}`;
             post.comments.push(commentText);
-            const comment = document.createElement('p');
-            comment.textContent = commentText;
-            postDiv.appendChild(comment);
+            displayComment(commentText, postDiv);
             commentInput.value = '';
             updateCommentCount(post, postDiv);
             updateLocalStorage();
@@ -140,18 +138,23 @@ function displayPost(post, feed) {
     commentDiv.appendChild(commentInput);
     commentDiv.appendChild(commentBtn);
 
-    // Function to update comment count
-    function updateCommentCount(post, postDiv) {
-        const commentCountElement = postDiv.querySelector('.comment-count');
-        if (commentCountElement) {
-            commentCountElement.textContent = `Comments: ${post.comments.length}`;
-        } else {
-            const newCommentCountElement = document.createElement('p');
-            newCommentCountElement.classList.add('comment-count');
-            newCommentCountElement.textContent = `Comments: ${post.comments.length}`;
-            postDiv.appendChild(newCommentCountElement);
-        }
+    // Display previous comments
+    post.comments.forEach(comment => {
+        displayComment(comment, postDiv);
+    });
+
+    // Function to display a comment
+    function displayComment(comment, postDiv) {
+        const commentElement = document.createElement('p');
+        commentElement.textContent = comment;
+        postDiv.appendChild(commentElement);
     }
+
+    // Comment count
+    const commentCountElement = document.createElement('p');
+    commentCountElement.classList.add('comment-count');
+    commentCountElement.textContent = `Comments: ${post.comments.length}`;
+    postDiv.appendChild(commentCountElement);
 
     // Share button
     const shareBtn = document.createElement('button');
@@ -193,6 +196,7 @@ function displayPost(post, feed) {
     actionsDiv.appendChild(followBtn);
     postDiv.appendChild(actionsDiv);
     postDiv.appendChild(commentDiv);
+    postDiv.appendChild(commentCountElement);
     feed.prepend(postDiv);
 }
 
