@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Food Delivery App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>KHADYA</h1>
+    </header>
+
+    <main>
+        <section id="login">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="email" placeholder="Your Email" required>
+                <input type="password" placeholder="Your Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 @KHADYA official</p>
+    </footer>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Login successful! Redirecting to menu...');
+            window.location.href = 'index.html'; // Redirect to main page
+        });
+    </script>
+</body>
+</html>
