@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classifieds</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>VIKRAYA</h1>
+        <nav>
+            <ul>
+                <li><a href="#listings">Listings</a></li>
+                <li><a href="#post-ad">Post an Ad</a></li>
+                <li><a href="#login" id="login-link">Login</a></li>
+                <li id="logout" style="display: none;"><a href="#">Logout</a></li>
+                <li><a href="#cart" id="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="login" style="display: none;">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <section id="listings">
+            <h2>Available Listings</h2>
+            <input type="text" id="search-bar" placeholder="Search for items..." oninput="filterAds()">
+            <div id="ad-container">
+                <!-- Listings will be dynamically added here -->
+            </div>
+        </section>
+
+        <section id="post-ad">
+            <h2>Post an Ad</h2>
+            <form id="ad-form">
+                <label for="title">Item Title:</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required>
+
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+
+                <label for="contact">Contact Info:</label>
+                <input type="text" id="contact" name="contact" required placeholder="Email or Phone Number">
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required placeholder="City or Area">
+
+                <button type="submit">Submit Ad</button>
+            </form>
+        </section>
+        <section id="cart" style="display: none;">
+    <h2>Your Cart</h2>
+    <div id="cart-items">
+        <!-- Cart items will be dynamically added here -->
+    </div>
+    <form id="payment-form" style="display: none;">
+        <h3>Payment Information</h3>
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" name="card-number" required>
+
+        <label for="expiry">Expiry Date (MM/YY):</label>
+        <input type="text" id="expiry" name="expiry" required>
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required>
+
+        <button type="submit">Pay Now</button>
+    </form>
+    <button id="checkout-btn">Checkout</button>
+</section>
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Vikraya. All rights reserved.</p>
+    </footer>
+</body>
+</html>
 
